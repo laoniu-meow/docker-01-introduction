@@ -12,6 +12,7 @@ Docker is a containerization platform that lets you package and run applications
 
 ## Topic
 [x] [Install Docker](install-docker)
+
 [x] [Create first Dockerfile](create-first-dockerfile)
 
 ## Install Docker
