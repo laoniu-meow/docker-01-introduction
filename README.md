@@ -100,14 +100,29 @@ sudo apt-get update
 sudo apt-get install ca-certificates curl gnupg
 
 # 3. Add Docker’s official GPG key
-#    If you are using Debian, place the ubuntu -> debian in the url
+# Create the keyrings directory if it doesn't exist
+sudo mkdir -p /etc/apt/keyrings
+
+# Ubuntu, Download Docker's official GPG key for Ubuntu
 sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
 
+# Debain, Download Docker's official GPG key for Debian
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
 # 4. Set up the repository
+# Ubuntu
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# Debian
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
@@ -117,7 +132,6 @@ sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin dock
 
 # 6. Verify docker after install
 docker --version
-sudo docker run hello-world
 
 # 7. Start and enable the Docker service
 sudo systemctl enable --now docker
