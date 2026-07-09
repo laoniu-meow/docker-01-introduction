@@ -129,6 +129,9 @@ echo \
 # 5. Install Docker Engine
 sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+or
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # 6. Verify docker after install
 docker --version
