@@ -19,12 +19,8 @@ Docker is a containerization platform that lets you package and run applications
 This section guides you on how to install Docker in different operating system environments
 
 ### Windows
-```
-# 1. Go to the Docker official website to download the installer and run it to install Docker
-#    Select the installer that compatible with your computer processor (AMD64 or ARM64)
-
-# 2. After the installation completed, required to restart computer
-```
+1. Go to the Docker official website to download the installer and run it to install Docker Select the installer that compatible with your computer processor (AMD64 or ARM64)
+2. After the installation completed, required to restart computer
 
 ```
 # 3. Normally the installation will help you to enable these two Windows features at "Turn Windows Features on or off"
