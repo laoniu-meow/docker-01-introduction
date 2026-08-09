@@ -23,9 +23,9 @@ This section guides you on how to install Docker in different operating system e
 2. After the installation completed, required to restart computer
 
 3. Normally the installation will help you to enable these two Windows features at "Turn Windows Features on or off"
-- Hyper-V
-- Windows Subsystem for Linux
-- If these two features does not enable, then open PowerShell with Administrator mode and execute these commands:
+   - Hyper-V
+   - Windows Subsystem for Linux
+   - If these two features does not enable, then open PowerShell with Administrator mode and execute these commands:
 ```
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
